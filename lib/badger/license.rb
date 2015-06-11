@@ -9,7 +9,7 @@ module Badger
         target_url = target_url % owner
       end
 
-      badge_text = type unless badge_text = params['badge_text']
+      badge_text = type.upcase unless badge_text = params['badge_text']
       badge_url  = 'http://%s/:license-%s-%s' % [
           Config.instance.config['badge_service'],
           badge_text,
